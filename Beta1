@@ -61,7 +61,13 @@ s/^max-connections *=.*/max-connections = $max_connections/" $HOME/.celestia-app
 ------------------------------------------------
 pruning_keep_recent="100" 
 pruning_interval="10"
-
+[
+    {
+      "contribution-title": "Add a automation usecase to Aspect examples",
+      "project-repo": "https://github.com/artela-network/example",
+      "contributors": ["xxx"]
+    }
+  ]
 ------------------------------------------------------
 
 sed -i -e "s/^pruning *=.*/pruningÂ = \"custom\"/;\
