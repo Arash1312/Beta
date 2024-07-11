@@ -34,13 +34,8 @@ sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/con
 
 ---------------------------------------------
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
-
---------------------------------------------------
-echo $BOOTSTRAP_PEERS
-
 ------------------------------------------------
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
-
 echo $BOOTSTRAP_PEERS
 
 -----------------------------------------------------------
@@ -106,12 +101,6 @@ EOF
 
 ---------------------------------------------------
 sudo mv $HOME/celestia-appd.service /etc/systemd/system/
-
-----------------------------------------------------
-sudo systemctl enable celestia-appd
-sudo systemctl daemon-reload
-sudo systemctl restart celestia-appd && journalctl -u celestia-appd -f -o cat
-
 ------------------------------------------------------------
 Press CTRL+C to stop the logs
 
