@@ -13,14 +13,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to roo
 source
 
 metamask_WALLET="MY_WALLET"
-Ø§Ø·Ù„Ø§Ø¹Ø§Øª  Ø¯Ø§Ø®Ù„ "" Ø±Ùˆ Ù¾Ø§Ú© Ú©Ù†ÛŒØ¯(ÙÙ‚Ø· Ø®Ø· Ø§ÙˆÙ„ Ùˆ Ø¯ÙˆÙ…) Ùˆ Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ø®ÙˆØ¯ØªÙˆÙ† Ø±Ùˆ Ù‚Ø±Ø§Ø± Ø¨Ø¯ÛŒØ¯
-
-
-
 -------------------------------
 echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
-echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 ------------------------------------------------
@@ -37,6 +32,7 @@ BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/network
 ------------------------------------------------
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
 echo $BOOTSTRAP_PEERS
+metamask_WALLET="MY_WALLET"
 
 -----------------------------------------------------------
 sed -i 's/timeout-commit = ".*/timeout-commit = "25s"/g' $HOME/.celestia-app/config/config.toml
@@ -83,6 +79,7 @@ celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 
 celestia-appd config chain-id $CELESTIA_CHAIN
 celestia-appd config keyring-backend test
+metamask_WALLET="MY_WALLET"
 
 -------------------------------------------------------
 tee $HOME/celestia-appd.service > /dev/null <<EOF
