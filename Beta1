@@ -56,7 +56,15 @@ s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/;\
 s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.celestia-app/config/app.toml
 
 --------------------------------------------
-
+pruning_keep_recent="100" 
+pruning_interval="10"
+[
+    {
+      "contribution-title": "Add a automation usecase to Aspect examples",
+      "project-repo": "https://github.com/artela-network/example",
+      "contributors": ["xxx"]
+    }
+  ]
 sed -i 's/snapshot-interval *=.*/snapshot-interval = 0/' $HOME/.celestia-app/config/app.toml
 echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
