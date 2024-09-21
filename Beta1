@@ -80,7 +80,14 @@ celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 celestia-appd config chain-id $CELESTIA_CHAIN
 celestia-appd config keyring-backend test
 metamask_WALLET="MY_WALLET"
-
+-------------------------------
+echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
+echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
+source $HOME/.bash_profile
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "expor
 -------------------------------------------------------
 tee $HOME/celestia-appd.service > /dev/null <<EOF
 [Unit]
