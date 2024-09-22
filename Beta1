@@ -52,7 +52,8 @@ pruning_interval="10"
     }
   ]
 ------------------------------------------------------
-
+celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
+for bridge
 sed -i -e "s/^pruning *=.*/pruningÂ = \"custom\"/;\
 s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/;\
 s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.celestia-app/config/app.toml
