@@ -37,6 +37,12 @@ sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' 
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
 max_connections=50
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
+source
+echo 'export
 ----------------------------------------------------------------
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
