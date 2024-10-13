@@ -1,6 +1,9 @@
  bnb to polygon to
 for github
 
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
+source
 
 sudo apt update && sudo apt upgrade -y
 ---------------------------------------------
