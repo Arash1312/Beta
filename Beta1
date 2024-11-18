@@ -45,6 +45,10 @@ echo 'export
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
 max_connections=50
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
+source
+
 ------------------------------------------------
 pruning_keep_recent="100" 
 pruning_interval="10"
