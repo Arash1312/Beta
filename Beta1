@@ -116,7 +116,9 @@ tee $HOME/celestia-appd.service > /dev/null <<EOF
 [Install]
   WantedBy=multi-user.target
 EOF
-
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+--------------------------------
+metamask_WALLET="MY_WALLET"
 rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
 source
