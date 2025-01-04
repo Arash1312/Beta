@@ -2,9 +2,7 @@
 for github
 
 
-sudo apt update && sudo apt upgrade -y
----------------------------------------------
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+
 --------------------------------
 metamask_WALLET="MY_WALLET"
 -------------------------------
@@ -73,7 +71,9 @@ source
 pruning_keep_recent="100" 
 pruning_interval="10"
 [
-    {
+   sudo apt update && sudo apt upgrade -y
+---------------------------------------------
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
       "contribution-title": "Add a automation usecase to Aspect examples",
       "project-repo": "https://github.com/artela-network/example",
       "contributors": ["xxx"]
