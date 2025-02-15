@@ -1,10 +1,4 @@
 
-metamask_WALLET="MY_WALLET"
--------------------------------
-
-celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
-for bridge
--------------------------------------
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
 -----------------------------------------
@@ -78,6 +72,12 @@ echo $BOOTSTRAP_PEERS
 metamask_WALLET="MY_WALLET"
 ---------------------------------------------------
 
+metamask_WALLET="MY_WALLET"
+-------------------------------
+
+celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
+for bridge
+-------------------------------------
 celestia-appd config chain-id $CELESTIA_CHAIN
 celestia-appd config keyring-backend test
 metamask_WALLET="MY_WALLET"
