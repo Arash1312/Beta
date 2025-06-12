@@ -1,7 +1,12 @@
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
 
-
+max_num_inbound_peers=40 
+max_num_outbound_peers=10 
+max_connections=50
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
+source
 ---------------------------------------
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
@@ -24,12 +29,7 @@ source
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
 ----------------------------------------------------------------
-max_num_inbound_peers=40 
-max_num_outbound_peers=10 
-max_connections=50
-rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
-source
+
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
