@@ -15,10 +15,7 @@ sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' 
 -----------------------------------------------------------------
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
-source
-6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
+
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
 max_connections=50
@@ -43,7 +40,10 @@ pruning_interval="10"
       "project-repo": "https://github.com/artela-network/example",
       "contributors": ["xxx"]
     }
-  ]
+  ]rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_go to room
+source
+6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
 ------------------------------------------------------
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
 for bridge
