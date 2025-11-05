@@ -1,6 +1,4 @@
-cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
-6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
-sudo rm -rf /usr/local/go
+/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 
 max_num_inbound_peers=40 
@@ -9,7 +7,9 @@ max_connections=50
 
 source
 ---------------------------------------
-
+cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+6Ew6Gx1dLZ7Cp1oFhjmnfQvCdgxKAWerqEaeU3UUUGVg
+sudo rm -rf /usr/local
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
 sudo apt update && sudo apt upgrade -y
 -----------------------------------------------------------
