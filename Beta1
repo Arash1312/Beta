@@ -1,18 +1,5 @@
 
-import json
-import time
-import threading
-import paho.mqtt.client as mqtt
 
-class MQTTVacuumController:
-    def __init__(self, broker, port=1883, command_topic="home/vacuum/command", status_topic="home/vacuum/status", client_id="vacuum-controller"):
-       
-        self.connected = True
-        # subscribe to status
-        client.subscribe(self.status_topic)
-
-    def _on_message(self, client, userdata, msg):
-        try:
             payload = msg.payload.decode('utf-8')
             print(f"[STATUS] {msg.topic}: {payload}")
         except Exception as e:
@@ -52,7 +39,20 @@ Usage:
         self.client.on_message = self._on_message
         # optional: username/password
         # self.client.username_pw_set("user","pass")
+import json
+import time
+import threading
+import paho.mqtt.client as mqtt
 
+class MQTTVacuumController:
+    def __init__(self, broker, port=1883, command_topic="home/vacuum/command", status_topic="home/vacuum/status", client_id="vacuum-controller"):
+       
+        self.connected = True
+        # subscribe to status
+        client.subscribe(self.status_topic)
+
+    def _on_message(self, client, userdata, msg):
+        try:
     def _on_connect(self, client, userdata, flags, rc):
         print("MQTT connected with result code", rc)
 
