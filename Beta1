@@ -5,15 +5,7 @@
         except Exception as e:
             print("Error decoding status message:", e)
 ver, daemon=True)
-        t.start()
-        # wait for connection
-        timeout = 5
-        while not self.connected and timeout>0:
-            time.sleep(0.2)
-            timeout -= 0.2
-        if not self.connected:
-            raise RuntimeError("Failed to connect to MQTT broker")
-#!/usr/bin/env python3
+       
 """
 mqtt_controller.py
 Simple MQTT-based controller for robot vacuums that support MQTT or Home Assistant topics.
@@ -55,7 +47,15 @@ class MQTTVacuumController:
         try:
     def _on_connect(self, client, userdata, flags, rc):
         print("MQTT connected with result code", rc)
-
+ t.start()
+        # wait for connection
+        timeout = 5
+        while not self.connected and timeout>0:
+            time.sleep(0.2)
+            timeout -= 0.2
+        if not self.connected:
+            raise RuntimeError("Failed to connect to MQTT broker")
+#!/usr/bin/env python3
 import argparse
     def send_command(self, command: dict):
         payload = json.dumps(command)
