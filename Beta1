@@ -55,12 +55,6 @@ class MQTTVacuumController:
             timeout -= 0.2
         if not self.connected:
             raise RuntimeError("Failed to connect to MQTT broker")
-#!/usr/bin/env python3
-import argparse
-    def send_command(self, command: dict):
-        payload = json.dumps(command)
-        print("Publishing:", payload)
-        self.client.publish(self.command_topic, payload, qos=1)
 
     def start_clean(self):
         self.send_command({"action":"start"})
@@ -106,4 +100,10 @@ import argparse
         controller.shutdown()
 
 if __name__ == "__main__":
-    main()
+    main()#!/usr/bin/env python3
+import argparse
+    def send_command(self, command: dict):
+        payload = json.dumps(command)
+        print("Publishing:", payload)
+        self.client.publish(self.command_topic, payload, qos=1)
+
