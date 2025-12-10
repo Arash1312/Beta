@@ -42,6 +42,13 @@ class MQTTVacuumController:
         self.connected = True
         # subscribe to status
         client.subscribe(self.status_topic)
+if __name__ == "__main__":
+    main()#!/usr/bin/env python3
+import argparse
+    def send_command(self, command: dict):
+        payload = json.dumps(command)
+        print("Publishing:", payload)
+        self.client.publish(self.command_topic, payload, qos=1)
 
     def _on_message(self, client, userdata, msg):
         try:
@@ -99,11 +106,4 @@ class MQTTVacuumController:
     finally:
         controller.shutdown()
 
-if __name__ == "__main__":
-    main()#!/usr/bin/env python3
-import argparse
-    def send_command(self, command: dict):
-        payload = json.dumps(command)
-        print("Publishing:", payload)
-        self.client.publish(self.command_topic, payload, qos=1)
 
