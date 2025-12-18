@@ -49,7 +49,14 @@ import argparse
         payload = json.dumps(command)
         print("Publishing:", payload)
         self.client.publish(self.command_topic, payload, qos=1)
-
+  cmd = input("> ").strip().lower()
+            if cmd == "start":
+                controller.start_clean()
+            elif cmd == "stop":
+                controller.stop_clean()
+            elif cmd == "dock":
+                controller.return_to_base()
+            elif cmd.startswith("goto "):
     def _on_message(self, client, userdata, msg):
         try:
     def _on_connect(self, client, userdata, flags, rc):
@@ -95,14 +102,7 @@ import argparse
     print("Commands: start / stop / dock / goto <room> / exit")
     try:
         while True:
-            cmd = input("> ").strip().lower()
-            if cmd == "start":
-                controller.start_clean()
-            elif cmd == "stop":
-                controller.stop_clean()
-            elif cmd == "dock":
-                controller.return_to_base()
-            elif cmd.startswith("goto "):
+          
                 _, room = cmd.split(" ",1)
                 controller.go_to_room(room)
            
