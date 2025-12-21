@@ -47,7 +47,17 @@ import paho.mqtt.client as mqtt
 
 class MQTTVacuumController:
     def __init__(self, broker, port=1883, command_topic="home/vacuum/command", status_topic="home/vacuum/status", client_id="vacuum-controller"):
-       
+           controller = MQTTVacuumController(args.broker, args.port, args.command_topic, args.status_topic)
+    controller.connect()
+
+    print("Commands: start / stop / dock / goto <room> / exit")
+    try:
+        while True:
+          
+                _, room = cmd.split(" ",1)
+                controller.go_to_room(room)
+           
+
         self.connected = True
         # subscribe to status
         client.subscribe(self.status_topic)
@@ -96,14 +106,4 @@ import argparse
         self.client.disconnect()
 
 
-    controller = MQTTVacuumController(args.broker, args.port, args.command_topic, args.status_topic)
-    controller.connect()
-
-    print("Commands: start / stop / dock / goto <room> / exit")
-    try:
-        while True:
-          
-                _, room = cmd.split(" ",1)
-                controller.go_to_room(room)
-           
 
