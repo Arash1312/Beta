@@ -7,7 +7,11 @@
     finally: def go_to_room(self, room_name):
         # requires robot to support named zones/rooms
         self.send_command({"action":"goto","room":room_name})
-
+  payload = msg.payload.decode('utf-8')
+            print(f"[STATUS] {msg.topic}: {payload}")
+        except Exception as e:
+            print("Error decoding status message:", e)
+ver, daemon=True)
     def shutdown(self):
         self.client.disconnect()
         controller.shutdown()
@@ -22,11 +26,7 @@
         t = threading.Thread(target=self.client.loop_fore
 
 
-            payload = msg.payload.decode('utf-8')
-            print(f"[STATUS] {msg.topic}: {payload}")
-        except Exception as e:
-            print("Error decoding status message:", e)
-ver, daemon=True)
+          
        
 """
 mqtt_controller.py
