@@ -4,13 +4,7 @@
                 print("Unknown command")
     except KeyboardInterrupt:
         pass
-    finally: def go_to_room(self, room_name):
-        # requires robot to support named zones/rooms
-        self.send_command({"action":"goto","room":room_name})
-  payload = msg.payload.decode('utf-8')
-            print(f"[STATUS] {msg.topic}: {payload}")
-        except Exception as e:
-            print("Error decoding status message:", e)
+ 
 ver, daemon=True)
     def shutdown(self):
         self.client.disconnect()
@@ -58,7 +52,13 @@ class MQTTVacuumController:
     print("Commands: start / stop / dock / goto <room> / exit")
     try:
         while True:
-          
+             finally: def go_to_room(self, room_name):
+        # requires robot to support named zones/rooms
+        self.send_command({"action":"goto","room":room_name})
+  payload = msg.payload.decode('utf-8')
+            print(f"[STATUS] {msg.topic}: {payload}")
+        except Exception as e:
+            print("Error decoding status message:", e)
                 _, room = cmd.split(" ",1)
                 controller.go_to_room(room)
            
