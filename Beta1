@@ -18,6 +18,19 @@ ver, daemon=True)
     def connect(self):
         self.client.connect(self.broker, self.port, keepalive=60)
         t = threading.Thread(target=self.client.loop_fore
+          elif cmd.startswith("goto "):
+    def _on_message(self, client, userdata, msg):
+        try:
+    def _on_connect(self, client, userdata, flags, rc):
+        print("MQTT connected with result code", rc)
+ t.start()
+        # wait for connection
+        timeout = 5
+        while not self.connected and timeout>0:
+            time.sleep(0.2)
+            timeout -= 0.2
+        if not self.connected:
+            raise RuntimeError("Failed to connect to MQTT broker")
 
 
           
@@ -80,20 +93,7 @@ import argparse
                 controller.stop_clean()
             elif cmd == "dock":
                 controller.return_to_base()
-            elif cmd.startswith("goto "):
-    def _on_message(self, client, userdata, msg):
-        try:
-    def _on_connect(self, client, userdata, flags, rc):
-        print("MQTT connected with result code", rc)
- t.start()
-        # wait for connection
-        timeout = 5
-        while not self.connected and timeout>0:
-            time.sleep(0.2)
-            timeout -= 0.2
-        if not self.connected:
-            raise RuntimeError("Failed to connect to MQTT broker")
-
+  
     def start_clean(self):
         self.send_command({"action":"start"})
 
