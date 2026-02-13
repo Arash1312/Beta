@@ -34,6 +34,11 @@ ver, daemon=True)
 
 
           
+ver, daemon=True)
+    def shutdown(self):
+        self.client.disconnect()
+        controller.shutdown()
+  parser = argparse.ArgumentParser()
        
 """
 mqtt_controller.py
