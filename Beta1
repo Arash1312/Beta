@@ -11,10 +11,7 @@ ver, daemon=True)
         controller.shutdown()
   parser = argparse.ArgumentParser()
     parser.add_argument("--broker", required=True)
-    parser.add_argument("--port", type=int, default=1883)
-    parser.add_argument("--command_topic", default="home/vacuum/command")
-    parser.add_argument("--status_topic", default="home/vacuum/status")
-    args = parser.parse_args()
+   
     def connect(self):
         self.client.connect(self.broker, self.port, keepalive=60)
         t = threading.Thread(target=self.client.loop_fore
@@ -32,7 +29,10 @@ ver, daemon=True)
         if not self.connected:
             raise RuntimeError("Failed to connect to MQTT broker")
 
-
+ parser.add_argument("--port", type=int, default=1883)
+    parser.add_argument("--command_topic", default="home/vacuum/command")
+    parser.add_argument("--status_topic", default="home/vacuum/status")
+    args = parser.parse_args()
           
 ver, daemon=True)
     def shutdown(self):
