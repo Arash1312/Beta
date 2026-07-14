@@ -11,13 +11,6 @@ Nyxora is a modern open-source project focused on performance, simplicity, and s
 
 ## Installation
 
-```bash
-git clone https://github.com/your-username/nyxora.git
-cd nyxora
-import psutil
-import time
-from datetime import datetime
-
 def display_stats():
     print("=" * 50)
     print(f"CodePulse - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -33,3 +26,10 @@ if __name__ == "__main__":
         display_stats()
         print()
         time.sleep(2)
+
+```bash
+git clone https://github.com/your-username/nyxora.git
+cd nyxora
+import psutil
+import time
+from datetime import datetime
